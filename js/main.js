@@ -71,7 +71,7 @@ function showData(){
             <td>${i+1}</td>
             <td>${arr[i].name}</td>
             <td>${arr[i].tel}</td>
-            <td>${arr[i].points}</td>
+            <td>${arr[i].points} = ${arr[i].points * 0.7} EGP</td>
             <td><button id="edit_Data" onclick="update(${i})"><i class="fa-solid fa-pen-to-square"></i></button></td>
             <td><button id="remove_Data" onclick="delet_item(${i})"><i class="fa-solid fa-trash"></i></button></td>
         </tr>
@@ -132,13 +132,13 @@ function nameChecker(){
     checkNameData.style.color ="#00D290";
     for(var i=0; i<arr.length;i++){
         if(add_name.value == ""){
-            checkNameData.innerHTML="empty"
+            checkNameData.innerHTML=`<i class="fa-solid fa-circle-xmark"></i> empty`
             checkNameData.style.color ="#8F1919";    
         }else if(arr[i].name != add_name.value){
-            checkNameData.innerHTML="valid Name"
+            checkNameData.innerHTML=`<i class="fa-solid fa-check"></i> valid Name`
             checkNameData.style.color ="#00D290";
         }else if(arr[i].name == add_name.value){
-            checkNameData.innerHTML="invalid Name"
+            checkNameData.innerHTML=`<i class="fa-solid fa-circle-xmark"></i> invalid Name`
             checkNameData.style.color ="#8F1919";
             break;
         }

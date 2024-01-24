@@ -14,11 +14,12 @@
     </nav>
 
     <div class="control_btn">
-        <button  onclick="call_Btn(add_customer)">اضافه عميل</button>
-        <button  onclick="call_Btn(edit_content)">تعــديل</button>
+        <button  onclick="call_Btn(add_customer)">اضافه عميل <i class="fa-solid fa-address-book"></i></button>
+        <button  onclick="call_Btn(edit_content)">تعــديل <i class="fa-solid fa-user-pen"></i></button>
     </div>
 
     <div id="edit_content">
+        <span class="search_icon"><i class="fa-solid fa-magnifying-glass"></i></span>
         <input type="search" id="search" placeholder="Search" onkeyup="searchData(this.value)">
         <table border="1px">
             <thead>

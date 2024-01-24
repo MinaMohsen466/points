@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Document</title>
 </head>
 <body>
@@ -19,7 +20,7 @@
 
     <div id="edit_content">
         <input type="search" id="search" placeholder="Search" onkeyup="searchData(this.value)">
-        <table>
+        <table border="1px">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -38,15 +39,16 @@
     <div id="add_customer">
         <div>
             <label for="">Name:</label><br>
-            <input type="text" id="add_name">
+            <input type="text" id="add_name" placeholder="Name" onkeyup="nameChecker()">
+            <div id="checkNameData">valid Name</div>
         </div>
         <div>
             <label for="">tel:</label><br>
-            <input type="tel" id="add_tel">
+            <input type="tel" id="add_tel" placeholder="tel">
         </div>
         <div>
             <label for="">Num_of_point:</label><br>
-            <input type="number" id="add_point">
+            <input type="number" id="add_point" placeholder="Num_of_point">
         </div>
         <button id="add_Btn">Add</button>
     </div>

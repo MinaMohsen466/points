@@ -129,4 +129,7 @@ table tbody tr td button{
         font-weight: bolder;
         cursor: pointer;
     }
+    #add_customer div input{
+        font-size: .8rem;
+    }
 }

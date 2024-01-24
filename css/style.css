@@ -108,6 +108,9 @@ table tbody tr td button{
 }
 
 @media (max-width:600px){
+    #edit_content{
+        width: 100%;
+    }
     #search{
         width: 80%;
     }
@@ -120,14 +123,10 @@ table tbody tr td button{
         font-size: .8rem;
     }
     table tbody{
-        font-size: .8rem;
+        font-size: .7rem;
     }
     table tbody tr td button{
         padding: 2px 4px;
-        background-color: cadetblue;
-        color: white;
-        font-weight: bolder;
-        cursor: pointer;
     }
     #add_customer div input{
         font-size: .8rem;

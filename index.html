@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- <nav>
+        <img src="img/panar.jpg">
+    </nav> -->
+
+    <div class="control_btn">
+        <button  onclick="call_Btn(add_customer)">اضافه عميل</button>
+        <button  onclick="call_Btn(edit_content)">تعــديل</button>
+    </div>
+
+    <div id="edit_content">
+        <input type="search" id="search" placeholder="Search" onkeyup="searchData(this.value)">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>phone_Num</th>
+                    <th>Num_of_point</th>
+                    <th>Edit</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+            </tbody>
+        </table>
+    </div>
+
+    <div id="add_customer">
+        <div>
+            <label for="">Name:</label><br>
+            <input type="text" id="add_name">
+        </div>
+        <div>
+            <label for="">tel:</label><br>
+            <input type="tel" id="add_tel">
+        </div>
+        <div>
+            <label for="">Num_of_point:</label><br>
+            <input type="number" id="add_point">
+        </div>
+        <button id="add_Btn">Add</button>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

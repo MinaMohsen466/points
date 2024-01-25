@@ -6,6 +6,8 @@
 nav img{
     width: 100%;
     border-bottom: 5px solid black;
+    border-radius: 0 0 40px 40px;
+    filter: drop-shadow(2px 2px 2px gray);
 }
 
 .control_btn{
@@ -16,12 +18,12 @@ nav img{
 }
 .control_btn button{
     padding: 5px 15px;
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     font-weight: bolder;
     margin: 5px 40px;
     background-color: cadetblue;
     color: white;
-    border-radius: 7px;
+    border-radius: 9px;
     cursor: pointer;
 }
 .control_btn button:hover{
@@ -174,6 +176,9 @@ table tbody tr td button{
         top: 29px;
         right: 47px;
     }
+    .control_btn button{
+        font-size: 1.8rem;
+    }
 }
 @media (min-width:601px) and (max-width:950px){
     #edit_content{
@@ -212,5 +217,8 @@ table tbody tr td button{
     .search_icon{
         top: 29px;
         right: 73px;
+    }
+    .control_btn button{
+        font-size: 2rem;
     }
 }

@@ -35,7 +35,7 @@ let tem;
 
 //add_customer
 add_Btn.onclick = function(){
-    if(add_name.value !="" && add_name.value !="" && add_name.value !="" && checkNameData.innerHTML == "valid Name"){
+    if(add_name.value !="" && add_name.value !="" && add_name.value !="" && checkNameData.innerHTML == `<i class="fa-solid fa-check"></i> valid Name`){
         if(mood == "creat"){
             let new_person = {
                 name:add_name.value.toLowerCase(),
@@ -115,7 +115,7 @@ function searchData(value){
             <td>${i+1}</td>
             <td>${arr[i].name}</td>
             <td>${arr[i].tel}</td>
-            <td>${arr[i].points}</td>
+            <td>${arr[i].points} = ${arr[i].points * 0.7} EGP</td>
             <td><button id="edit_Data" onclick="update(${i})"><i class="fa-solid fa-pen-to-square"></i></button></td>
             <td><button id="remove_Data" onclick="delet_item(${i})"><i class="fa-solid fa-trash"></i></button></td>
             <tr>

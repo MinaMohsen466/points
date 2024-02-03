@@ -18,8 +18,8 @@ let checkNameData = document.getElementById('checkNameData')
 //remove add_data
 function claer_add_data(){
     add_name.value = ''
-    add_name.value = ''
-    add_name.value = ''
+    add_tel.value = ''
+    add_point.value = ''
 }
 
 //creat array
@@ -35,7 +35,7 @@ let tem;
 
 //add_customer
 add_Btn.onclick = function(){
-    if(add_name.value !="" && add_name.value !="" && add_name.value !="" && checkNameData.innerHTML == `<i class="fa-solid fa-check"></i> valid Name`){
+    if(add_name.value !=""  && checkNameData.innerHTML == `<i class="fa-solid fa-check"></i> valid Name`){
         if(mood == "creat"){
             let new_person = {
                 name:add_name.value.toLowerCase(),
@@ -43,19 +43,17 @@ add_Btn.onclick = function(){
                 points:add_point.value,
             }
             arr.push(new_person);
-            console.log(arr)
             localStorage.setItem('customer_data', JSON.stringify(arr))
-            tbody.innerHTML = ''
         }else{
             arr[tem].name = add_name.value.toLowerCase(); 
             arr[tem].tel = add_tel.value; 
             arr[tem].points = add_point.value;
-            add_Btn.innerHTML ="add";
             localStorage.customer_data = JSON.stringify(arr);
-            tbody.innerHTML = "";
             mood = "creat";
         }
+        checkNameData.innerHTML = '';
     }
+    tbody.innerHTML = ''
     showData()
     claer_add_data()
     window.location.reload();
@@ -71,7 +69,7 @@ function showData(){
             <td>${i+1}</td>
             <td>${arr[i].name}</td>
             <td>${arr[i].tel}</td>
-            <td>${arr[i].points} = ${arr[i].points * 0.7} EGP</td>
+            <td>${arr[i].points} = ${Math.round(arr[i].points * 0.7)} EGP</td>
             <td><button id="edit_Data" onclick="update(${i})"><i class="fa-solid fa-pen-to-square"></i></button></td>
             <td><button id="remove_Data" onclick="delet_item(${i})"><i class="fa-solid fa-trash"></i></button></td>
         </tr>

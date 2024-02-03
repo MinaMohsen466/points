@@ -3,6 +3,18 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    background-image: url('../img/26985475_v870-mynt-03.jpg');
+    background-size: contain;
+}
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background-color: #377DC0;
+    border: 1px solid white;
+}
 nav img{
     width: 100%;
     border-bottom: 5px solid black;
@@ -15,6 +27,8 @@ nav img{
     padding: 10px;
     margin: 20px auto;
     text-align: center;
+    background-color: #C1DCE6;
+    border-radius: 9px;
 }
 .control_btn button{
     padding: 5px 15px;
@@ -25,6 +39,7 @@ nav img{
     color: white;
     border-radius: 9px;
     cursor: pointer;
+    border: 2px solid white;
 }
 .control_btn button:hover{
     filter: drop-shadow(1px 1px 1px black);
@@ -54,11 +69,11 @@ nav img{
     font-size: 1.2rem;
 }
 .search_icon{
-    width: 65px;
+    width: 55px;
     height: 45px;
     position: absolute;
     top: 29px;
-    right: 305px;
+    right: 302px;
     background-color: #377DC0;
     color: white;
     border-radius: 15px;
@@ -141,6 +156,7 @@ table tbody tr td button{
     }
     #search{
         width: 80%;
+        padding: 7px 5px;
     }
     table{
         width: 100%;
@@ -173,14 +189,18 @@ table tbody tr td button{
         font-size: .8rem;
     }
     .search_icon{
-        top: 29px;
+        top: 28px;
         right: 47px;
+        width: 50px;
+        height: 40px;
     }
     .control_btn button{
-        font-size: 1.8rem;
+        font-size: 1.5rem;
+        margin: 5px;
+        padding: 4px 10px;
     }
 }
-@media (min-width:601px) and (max-width:950px){
+@media (min-width:601px) and (max-width:1024px){
     #edit_content{
         width: 100%;
     }
@@ -220,5 +240,6 @@ table tbody tr td button{
     }
     .control_btn button{
         font-size: 2rem;
+        margin: 5px 20px;
     }
 }

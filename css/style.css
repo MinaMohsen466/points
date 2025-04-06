@@ -1,245 +1,493 @@
+:root {
+    --primary-color: #4361ee; /* Modern pharmacy blue */
+    --primary-light: #7b9fff;
+    --secondary-color: #2ec4b6; /* Modern pharmacy teal */
+    --secondary-light: #7ddcd3;
+    --accent-color: #f8f9fa; /* Light neutral background */
+    --text-color: #343a40;
+    --text-light: #ffffff;
+    --danger-color: #e63946;
+    --success-color: #06d6a0;
+    --error-color: #9d0208;
+    --border-radius: 8px;
+    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s ease;
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+/* Pharmacy-specific styling */
+.fa-address-book, .fa-user-pen, .fa-magnifying-glass, 
+.fa-pen-to-square, .fa-trash, .fa-check, .fa-circle-xmark {
+    color: inherit;
+}
+
+.control_btn button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+}
+
+.control_btn button:hover::before {
+    transform: translateX(0);
+}
+
 body{
-    background-image: url('../img/26985475_v870-mynt-03.jpg');
-    background-size: contain;
+    background-color: var(--accent-color);
+    background-image: linear-gradient(135deg, rgba(67, 97, 238, 0.03) 25%, transparent 25%, transparent 50%, rgba(67, 97, 238, 0.03) 50%, rgba(67, 97, 238, 0.03) 75%, transparent 75%, transparent);
+    background-size: 50px 50px;
+    background-attachment: fixed;
+    color: var(--text-color);
+    min-height: 100vh;
+    line-height: 1.6;
 }
+
 ::-webkit-scrollbar{
-    width: 10px;
+    width: 8px;
 }
+
 ::-webkit-scrollbar-thumb{
-    border-radius: 5px;
-    background-color: #377DC0;
-    border: 1px solid white;
+    border-radius: 4px;
+    background-color: var(--primary-color);
+    border: 1px solid var(--accent-color);
 }
 nav img{
     width: 100%;
-    border-bottom: 5px solid black;
-    border-radius: 0 0 40px 40px;
-    filter: drop-shadow(2px 2px 2px gray);
+    border-bottom: 4px solid var(--primary-color);
+    border-radius: 0 0 20px 20px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+    transition: var(--transition);
+    max-height: 180px;
+    object-fit: cover;
 }
 
 .control_btn{
-    width: 80%;
-    padding: 10px;
-    margin: 20px auto;
+    width: 85%;
+    padding: 25px;
+    margin: 30px auto;
     text-align: center;
-    background-color: #C1DCE6;
-    border-radius: 9px;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    border-top: 4px solid var(--secondary-color);
 }
+
 .control_btn button{
-    padding: 5px 15px;
-    font-size: 2.3rem;
-    font-weight: bolder;
+    padding: 14px 28px;
+    font-size: 1.5rem;
+    font-weight: bold;
     margin: 5px 40px;
-    background-color: cadetblue;
-    color: white;
-    border-radius: 9px;
+    background: var(--primary-color);
+    color: var(--text-light);
+    border-radius: var(--border-radius);
     cursor: pointer;
-    border: 2px solid white;
+    border: none;
+    transition: var(--transition);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    overflow: hidden;
 }
+
 .control_btn button:hover{
-    filter: drop-shadow(1px 1px 1px black);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background: var(--primary-light);
+}
+
+.control_btn button:nth-child(2) {
+    background: var(--secondary-color);
+}
+
+.control_btn button:nth-child(2):hover {
+    background: var(--secondary-light);
+}
+
+.control_btn button:active {
+    transform: translateY(1px);
 }
 #edit_content{
-    width: 80%;
+    width: 85%;
     margin: 20px auto;
-    padding: 10px;
-    background-color: rgb(187, 203, 203);
-    border-radius: 20px 20px 0 0;
+    padding: 25px;
+    background-color: white;
+    border-radius: var(--border-radius);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     position: relative;
+    box-shadow: var(--box-shadow);
+    border-top: 4px solid var(--primary-color);
 }
+
 #search{
-    width: 50%;
-    margin: 20px 0;
-    padding: 10px 5px;
-    border-radius: 10px;
-    font-size: 1.2rem;
-    font-weight: bolder;
-    border: none;
+    width: 100%;
+    padding: 14px 15px 14px 45px;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    font-weight: 500;
+    border: 1px solid #e0e0e0;
+    transition: var(--transition);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.08);
+    background-color: var(--accent-color);
 }
+
+#search:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
+}
+
 #search::placeholder{
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    color: #aaa;
 }
+
 .search_icon{
-    width: 55px;
-    height: 45px;
     position: absolute;
-    top: 29px;
-    right: 302px;
-    background-color: #377DC0;
-    color: white;
-    border-radius: 15px;
-    font-weight: bolder;
-    font-size: 1.5rem;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: var(--primary-color);
+    font-size: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    z-index: 10;
+    background: none;
+}
+
+.search_icon:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
 }
 table{
-    width: 70%;
+    width: 90%;
     text-align: center;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 25px;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(0,0,0,0.05);
 }
+
 table thead{
-    background-color: cadetblue;
-    font-size: 1.4rem;
-}
-table tbody{
+    background: var(--primary-color);
+    color: var(--text-light);
     font-size: 1.2rem;
+    letter-spacing: 0.5px;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    overflow: hidden;
 }
+
+table thead th {
+    padding: 12px;
+    font-weight: 600;
+}
+
+table tbody{
+    font-size: 1.1rem;
+    background-color: white;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: rgba(67, 97, 238, 0.04);
+}
+
+table tbody tr:hover {
+    background-color: rgba(67, 97, 238, 0.08);
+    transition: var(--transition);
+}
+
 table tbody tr td{
-    padding: 4px;
-    font-weight: bolder;
+    padding: 10px 8px;
+    font-weight: 500;
+    border-bottom: 1px solid #eee;
 }
+
 table tbody tr td button{
-    padding: 4px 6px;
-    background-color: cadetblue;
+    padding: 8px 12px;
+    background: var(--primary-color);
     color: white;
-    font-weight: bolder;
+    font-weight: bold;
     cursor: pointer;
+    border: none;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+}
+
+table tbody tr td button:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+table tbody tr td #remove_Data {
+    background: var(--danger-color);
 }
 #add_customer{
-    width: 80%;
+    width: 85%;
     margin: 20px auto;
-    padding: 10px;
-    background-color: rgb(187, 203, 203);
-    border-radius: 20px;
+    padding: 30px;
+    background-color: white;
+    border-radius: var(--border-radius);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     display: none;
+    box-shadow: var(--box-shadow);
+    border-top: 4px solid var(--secondary-color);
 }
+
 #add_customer div{
-    width: 50%;
-    margin: 5px;
+    width: 60%;
+    margin: 10px 0;
 }
+
 #add_customer div label{
-    font-size: 1.4rem;
-    font-weight: bolder;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 5px;
+    display: inline-block;
 }
+
 #add_customer div input{
-    font-size: 1.4rem;
-    font-weight: bolder;
+    font-size: 1.1rem;
+    font-weight: 500;
     width: 100%;
-    border-radius: 7px;
-    padding: 5px;
-    border: none;
-    border-left: 5px solid black;
+    border-radius: var(--border-radius);
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    transition: var(--transition);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.08);
+    background-color: var(--accent-color);
 }
+
+#add_customer div input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(58, 123, 213, 0.2);
+}
+
 #add_customer #add_Btn{
     width: 60%;
-    padding: 5px 10px;
-    font-size: 1.4rem;
-    font-weight: bolder;
-    border-radius: 10px;
-    background-color: cadetblue;
+    padding: 12px 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: var(--border-radius);
+    background: var(--secondary-color);
     color: white;
     cursor: pointer;
-    margin: 10px;
+    margin: 25px 0 10px;
+    border: none;
+    transition: var(--transition);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.5px;
 }
+
+#add_customer #add_Btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background: var(--secondary-light);
+}
+
+#add_customer #add_Btn:active {
+    transform: translateY(1px);
+}
+
 #checkNameData{
     display: none;
-    font-weight: bolder;
+    font-weight: 600;
+    margin-top: 8px;
+    transition: var(--transition);
+    padding: 4px 8px;
+    border-radius: 4px;
+    background-color: rgba(32, 201, 151, 0.1);
 }
 
 @media (max-width:600px){
     #edit_content{
-        width: 100%;
+        width: 95%;
+        padding: 20px 15px;
     }
+    
+    #edit_content > div {
+        width: 90%;
+    }
+    
     #search{
-        width: 80%;
-        padding: 7px 5px;
+        padding: 12px 10px 12px 35px;
+        font-size: 1rem;
     }
+    
     table{
         width: 100%;
         text-align: center;
     }
+    
     table thead{
-        background-color: cadetblue;
-        font-size: .8rem;
+        font-size: .9rem;
     }
+    
+    table thead th {
+        padding: 10px 4px;
+    }
+    
     table tbody{
-        font-size: .7rem;
-    }
-    table tbody tr td button{
-        padding: 2px 4px;
-    }
-    #add_customer{
-        width: 85%;
-    }
-    #add_customer div{
-        width: 70%;
-        margin: 5px;
-    }
-    #add_customer div input{
         font-size: .8rem;
     }
+    
     table tbody tr td{
-        padding: 2px;
+        padding: 10px 4px;
     }
+    
+    table tbody tr td button{
+        width: 32px;
+        height: 32px;
+        font-size: 0.8rem;
+    }
+    
+    #add_customer{
+        width: 95%;
+        padding: 20px 15px;
+    }
+    
+    #add_customer div{
+        width: 90%;
+        margin: 10px 0;
+    }
+    
+    #add_customer div label{
+        font-size: 1rem;
+    }
+    
+    #add_customer div input{
+        font-size: 1rem;
+        padding: 10px 12px;
+    }
+    
+    #add_customer #add_Btn{
+        width: 85%;
+        font-size: 1.1rem;
+        padding: 12px;
+    }
+    
     #checkNameData{
-        font-size: .8rem;
+        font-size: .9rem;
     }
+    
     .search_icon{
-        top: 28px;
-        right: 47px;
-        width: 50px;
-        height: 40px;
+        font-size: 0.8rem;
     }
+    
+    .control_btn{
+        width: 95%;
+        padding: 20px 15px;
+    }
+    
     .control_btn button{
-        font-size: 1.5rem;
-        margin: 5px;
-        padding: 4px 10px;
+        font-size: 1.2rem;
+        margin: 8px 0;
+        padding: 12px 15px;
+        width: 85%;
     }
 }
 @media (min-width:601px) and (max-width:1024px){
     #edit_content{
-        width: 100%;
+        width: 90%;
+        padding: 25px 20px;
     }
+    
+    #edit_content > div {
+        width: 70%;
+    }
+    
     #search{
-        width: 80%;
+        padding: 12px 15px 12px 45px;
     }
+    
     table{
         width: 100%;
         text-align: center;
     }
+    
     table thead{
-        background-color: cadetblue;
+        font-size: 1.1rem;
+    }
+    
+    table thead th {
+        padding: 12px 8px;
+    }
+    
+    table tbody{
         font-size: 1rem;
     }
-    table tbody{
-        font-size: .9rem;
+    
+    table tbody tr td{
+        padding: 10px 6px;
     }
+    
     table tbody tr td button{
-        padding: 2.5px 5px;
+        width: 34px;
+        height: 34px;
     }
+    
     #add_customer{
-        width: 85%;
+        width: 90%;
+        padding: 25px;
     }
+    
     #add_customer div{
         width: 70%;
-        margin: 5px;
+        margin: 12px 0;
     }
+    
     #add_customer div input{
+        font-size: 1.1rem;
+        padding: 12px 15px;
+    }
+    
+    #add_customer #add_Btn{
+        width: 70%;
+        padding: 12px 20px;
+    }
+    
+    .search_icon{
         font-size: 1rem;
     }
-    table tbody tr td{
-        padding: 2.5px;
+    
+    .control_btn{
+        width: 90%;
+        padding: 25px 20px;
     }
-    .search_icon{
-        top: 29px;
-        right: 73px;
-    }
+    
     .control_btn button{
-        font-size: 2rem;
-        margin: 5px 20px;
+        font-size: 1.4rem;
+        margin: 8px 20px;
+        padding: 12px 25px;
     }
 }
